@@ -1,10 +1,9 @@
 version: v1
 plugins:
-  - name: go
+  - remote: buf.build/protocolbuffers/plugins/go
     out: api
+    opt: paths=source_relative
   - remote: buf.build/grpc/plugins/go
-    out: api
-  - remote: buf.build/library/plugins/go
     out: api
     opt: paths=source_relative
   - remote: buf.build/cerbos/plugins/protoc-gen-validate
