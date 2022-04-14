@@ -2,8 +2,13 @@ version: v1
 plugins:
   - name: go
     out: api
-  - name: go-grpc
+  - remote: buf.build/grpc/plugins/go
     out: api
-  - name: validate
-    out: go
+  - remote: buf.build/library/plugins/go
+    out: api
     opt: paths=source_relative
+  - remote: buf.build/cerbos/plugins/protoc-gen-validate
+    out: api
+    opt: 
+      - paths=source_relative
+      - lang=go
