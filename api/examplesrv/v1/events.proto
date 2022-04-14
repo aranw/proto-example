@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option go_package = "github.com/aranw/proto/examplesrv/v1;examplesrvv1";
+
+package aranw.examplesrv.v1;
+
+import "google/protobuf/timestamp.proto";
+import "validate/validate.proto";
+
+message ExampleEvent {
+    string example = 1 [(validate.rules).string.uuid = true];
+    google.protobuf.Timestamp event_at = 3;
+}

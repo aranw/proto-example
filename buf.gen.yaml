@@ -1,0 +1,9 @@
+version: v1
+plugins:
+  - name: go
+    out: api
+  - name: go-grpc
+    out: api
+  - name: validate
+    out: go
+    opt: paths=source_relative
